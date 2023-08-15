@@ -1,0 +1,7 @@
+.section {
+  padding: 25px;
+  border: 2px dashed #ccc;
+  &:not(:first-child) {
+    margin-top: 50px;
+  }
+}
