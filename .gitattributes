@@ -4,12 +4,23 @@
 *.gif   binary
 *.jpg   binary
 *.jpeg  binary
+*.avif  binary
 *.png   binary
 *.webp  binary
 
 # Video
 *.mp4   binary
+*.webm  binary
+*.mp4   binary
+*.avi   binary
+*.mov   binary
+
+# Audio
+*.mp3   binary
 
 # Fonts
 *.woff  binary
 *.woff2 binary
+
+# Docs
+*.pdf binary

@@ -2,7 +2,7 @@ import path, { resolve } from 'node:path'
 import url from 'node:url'
 import fs from 'node:fs'
 
-const outDir = resolve(path.dirname(url.fileURLToPath(import.meta.url)), 'dist')
+const outDir = resolve(path.dirname(url.fileURLToPath(import.meta.url)), 'build')
 
 function readWriteAsync(item) {
   fs.readFile(item, 'utf8', function (err, data) {

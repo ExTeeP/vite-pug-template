@@ -8,12 +8,17 @@ Thumbs.db
 .vscode
 
 # Вспомогательные файлы
-*.log*
-.stylelintcache
 node_modules/
+package-lock.json
+npm-debug.*
+.stylelintcache
+.nvmrc
+*.ai
+*.psd
+*.log*
 
 # Папка с собранными файлами проекта
-dist/
+build/
 
 # Генерируемые файлы
 src/blocks/mixins.pug

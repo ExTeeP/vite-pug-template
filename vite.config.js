@@ -8,10 +8,10 @@ import viteEslint from 'vite-plugin-eslint'
 import viteStylelint from 'vite-plugin-stylelint'
 import viteSassGlob from 'vite-plugin-sass-glob-import'
 import viteImagemin from 'vite-plugin-imagemin'
-import { createSvgIconsPlugin } from 'vite-plugin-svg-icons'
+import ViteSvgSpriteWrapper from 'vite-svg-sprite-wrapper';
 
 const root = resolve(path.dirname(url.fileURLToPath(import.meta.url)), 'src')
-const outDir = resolve(path.dirname(url.fileURLToPath(import.meta.url)), 'dist')
+const outDir = resolve(path.dirname(url.fileURLToPath(import.meta.url)), 'build')
 
 export default defineConfig({
   root,
@@ -85,11 +85,9 @@ export default defineConfig({
         ]
       }
     }),
-    createSvgIconsPlugin({
-      iconDirs: [resolve(process.cwd(), 'src/images')],
-      symbolId: '[name]',
-      inject: 'body-last',
-      customDomId: '__svg__icons__dom__'
+    ViteSvgSpriteWrapper({
+      icons: "src/images/sprite/*.svg",
+      outputDir: "build/images",
     })
   ]
 })

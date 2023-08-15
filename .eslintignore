@@ -1,4 +1,4 @@
-/dist
+/build
 
 gulpfile.js
 postcss.config.js
