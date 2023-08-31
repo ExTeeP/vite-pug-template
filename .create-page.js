@@ -2,7 +2,7 @@ import path, { resolve } from 'node:path'
 import url from 'node:url'
 import fs from 'node:fs'
 
-const pagesDir = resolve(path.dirname(url.fileURLToPath(import.meta.url)), 'src/pages')
+const pagesDir = resolve(path.dirname(url.fileURLToPath(import.meta.url)), 'source/pages')
 const pageName = process.argv[process.argv.length - 1]
 
 fs.mkdir(`${pagesDir}/${pageName}`, () => {

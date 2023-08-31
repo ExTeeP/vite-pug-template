@@ -10,7 +10,7 @@ import viteSassGlob from 'vite-plugin-sass-glob-import'
 import viteImagemin from 'vite-plugin-imagemin'
 import ViteSvgSpriteWrapper from 'vite-svg-sprite-wrapper';
 
-const root = resolve(path.dirname(url.fileURLToPath(import.meta.url)), 'src')
+const root = resolve(path.dirname(url.fileURLToPath(import.meta.url)), 'source')
 const outDir = resolve(path.dirname(url.fileURLToPath(import.meta.url)), 'build')
 
 export default defineConfig({
@@ -24,15 +24,25 @@ export default defineConfig({
     rollupOptions: {
       output: {
         assetFileNames: (assetInfo) => {
-          let extType = assetInfo.name.split('.')[1]
+          console.log(assetInfo);
+          let extType = assetInfo.name.split('.')[1];
+          let fileName = assetInfo.name.split('.')[0];
+
           if (/png|jpe?g|svg|gif|tiff|bmp|ico/i.test(extType)) {
-            extType = 'images'
+            extType = 'img';
+
           } else if (extType === 'css') {
-            extType = 'styles'
+            extType = 'css';
+
+            return `${extType}/style[extname]`;
+          } else if (extType === 'js') {
+            extType = 'js';
+
+            return `${extType}/${fileName}[extname]`;
           }
-          return `${extType}/[name][extname]`
+
+          return `${extType}/[name][extname]`;
         },
-        chunkFileNames: 'scripts/scripts.js'
       }
     }
   },
@@ -76,7 +86,8 @@ export default defineConfig({
       svgo: {
         plugins: [
           {
-            name: 'removeViewBox'
+            name: 'removeViewBox',
+            active: false
           },
           {
             name: 'removeEmptyAttrs',
@@ -86,8 +97,8 @@ export default defineConfig({
       }
     }),
     ViteSvgSpriteWrapper({
-      icons: "src/images/sprite/*.svg",
-      outputDir: "build/images",
+      icons: "source/img/sprite/*.svg",
+      outputDir: "build/img",
     })
   ]
 })

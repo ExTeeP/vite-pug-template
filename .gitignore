@@ -21,4 +21,4 @@ npm-debug.*
 build/
 
 # Генерируемые файлы
-src/blocks/mixins.pug
+source/blocks/mixins.pug

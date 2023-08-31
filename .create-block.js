@@ -3,7 +3,7 @@ import url from 'node:url'
 import fs from 'node:fs'
 import { exec } from 'node:child_process'
 
-const blocksDir = resolve(path.dirname(url.fileURLToPath(import.meta.url)), 'src/blocks')
+const blocksDir = resolve(path.dirname(url.fileURLToPath(import.meta.url)), 'source/blocks')
 let blockPath = process.argv[process.argv.length - 1]
 blockPath.slice(-1) === '/' ? blockPath = blockPath.slice(0, -1) : ''
 const blockName = blockPath.split('/').pop()
