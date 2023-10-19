@@ -1,4 +1,4 @@
-import '../styles/style.scss'
+import '../styles/style.scss';
 // import uiTextarea from '../blocks/_ui/ui-textarea/ui-textarea';
 // import {uiTooltip} from '../blocks/_ui/ui-tooltip/ui-tooltip';
 

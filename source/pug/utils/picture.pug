@@ -1,0 +1,4 @@
+mixin picture(path, image, format, width, height, altText)
+  picture(class!=attributes.class)
+    source(type="image/webp", srcset="../../assets/images" + path + "/" + image + ".webp" + ", " + "../../assets/images" + path + "/" + image + "@2x.webp" + " 2x")
+    img(src="../../assets/images" + path + "/" + image + "." + format, srcset= "../../assets/images" + path + "/" + image + "@2x." + format + " 2x", width= width, height= height, alt= altText)

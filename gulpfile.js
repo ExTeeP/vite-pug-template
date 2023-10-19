@@ -22,7 +22,7 @@ const generatePugMixins = () => {
 }
 
 function pugMixins() {
-  return gulp.src(['source/blocks/**/*.pug', '!source/blocks/mixins.pug', '!source/blocks/header/*', '!source/blocks/footer/*'])
+  return gulp.src(['source/blocks/**/*.pug', '!source/blocks/mixins.pug'])
     .pipe(generatePugMixins())
 }
 
